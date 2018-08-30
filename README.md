@@ -9,7 +9,7 @@
 
 Cấu trúc Synth—Orihaus (CC BY 2.0)
 
-> "Master the JavaScript Interview" là 1 series các bài viết được thiết kế để chuẩn bị ứng viên cho những câu hỏi phổ biến mà họ rất dễ gặp khi ứng tuyển cho các vị trí Javascript từ level mid đến senior. Đây đều là những câu hỏi tôi thường sử dụng trong phỏng vấn thực tế.
+> "Master the JavaScript Interview" là 1 series các bài viết được thiết kế để chuẩn bị cho người xin việc những câu hỏi phổ biến mà họ rất dễ gặp khi ứng tuyển cho các vị trí Javascript từ level mid đến senior. Đây đều là những câu hỏi tôi thường sử dụng trong phỏng vấn thực tế.
 
 Lập trình hướng chức năng đã trở thành 1 chủ đề cực kỳ hot trong giới JavaScript.  Chỉ vài năm trước đây, chỉ 1 số ít lập trình viên JavaScript đã biết lập trình hướng chức năng là gì, nhưng tất cả các codebase của các ứng dụng lớn tôi thấy trong 3 năm gần đây  sử dụng rất nhiều tư tưởng của  lập trình hướng chức năng.
 
@@ -17,7 +17,7 @@ Lập trình hướng chức năng đã trở thành 1 chủ đề cực kỳ ho
 
 Lập trình hướng chức năng là  1 mô hình   lập trình, có nghĩa là đây là 1 cách suy nghĩ về việc xây dựng phần mềm dựa trên 1 vài  nguyên tắc được định nghĩa cơ bản ( được liệt kê bên dưới_. Những ví dụ khác về các mô hình lập trình bao gồm lập trình  hướng đối tượng và lập trình  hướng thủ tục.
 
-Lập trình hướng chức năng có xu hướng ngắn gọn hơn,  dễ đoán hơn, và dễ dàng kiểm thử hơn lập trình imperative hay hướng đổi tượng -  nhưng nếu bạn không quen với nó  cũng như các cấu trúc phổ thông liên quan với nó, lập trình hướng chức năng có thể  dày hơn, và nội dung sẽ bị khó đọc với những người mới.
+Lập trình hướng chức năng có xu hướng ngắn gọn hơn,  dễ đoán hơn, và dễ dàng kiểm thử hơn lập trình imperative hay hướng đổi tượng -  nhưng nếu bạn không quen với nó  cũng như các cấu trúc phổ thông liên quan với nó, lập trình hướng chức năng có thể  nặng nề hơn, và tài liệu liên qua sẽ khó hiểu đối với những người mới.
 
 Nếu bạn bắt đầu tra google  cụm từ lập trình hướng chức năng, bạn sẽ  nhanh  chóng gặp những trở ngại  trong việc tìm kiếm các lý thuyết liên quan , thứ có thể trở nên cực kỳ đáng sợ cho người mới bắt đầu.  Sẽ là nói dối nếu bảo có cách nhanh chóng để học chúng. Nếu bạn đã lập trình Javascript 1 thời gian, bạn sẽ có thuận lợi khi có thể sử dụng nhiều khái niệm và tiện ích lập trình hướng chức năng trong phần mềm thực tế.
 
@@ -40,7 +40,7 @@ Nói 1 cách khác, nếu bạn muốn biết ý nghĩa của lập trình chứ
 
 Các pure function có nhiều tính chất quan trọng trong lập trình hướng chức năng, bào gồm **referential transparency** ( bạn có thể thay thế 1 lời gọi hàm với kết quả trả về của nó mà không phải thay đổi ý nghĩa của chương trinh). Đọc ["Pure Function là gì?"][2] để rõ hơn.
 
-**Function composition ** là 1 quá trình gộp 2 hay nhiều hàm để tạo ra 1 hàm mới  hay  thực hiện 1 vài tính toán. Ví dụ gộp hàm `f .g ` (dấu chấm có nghĩa là  "hợp với") tương đương với `f(g(x))` trong Javascript. Hiểu về function composition là 1 bước quan trọng để hiểu cách xây dựng phần mềm sử dụng lập trình hướng chức năng. Đọc  ["Function Composition là gì?"][3] để rõ hơn.
+**Function composition** là 1 quá trình gộp 2 hay nhiều hàm để tạo ra 1 hàm mới  hay  thực hiện 1 vài tính toán. Ví dụ gộp hàm `f .g ` (dấu chấm có nghĩa là  "hợp với") tương đương với `f(g(x))` trong Javascript. Hiểu về function composition là 1 bước quan trọng để hiểu cách xây dựng phần mềm sử dụng lập trình hướng chức năng. Đọc  ["Function Composition là gì?"][3] để rõ hơn.
 
 ### Shared State
 
@@ -65,7 +65,7 @@ Trong ví dụ bên trên, chúng tôi sử dụng `Object.assign()` và truyề
 
 Nếu bạn để ý kĩ hơn trong `console.log()` trong ví dụ này, bạn sẽ nhận thấy 1 vài thứ đã được đề cập : function composition. Nhắc lại 1 chút, function composition giống như kiểu `f(g(x))`. Trong trường hợp này, húng ta thay `f()` và `g()` với `x1()` và `x2()` để cho phép gộp `x1.x2`
 
-Tất nhiên, nếu bạn thay đổi thứ tự của phép gộp, đầu ra cũng sẽ thay đổi. Thứ tự của việc thực hiện  sẽ ảnh hưởng. `f(g(x))` không luôn băng `g(f(x)), nhưng những gì không ảnh hưởng nữa là những thứ xảy ra với các biến bên ngoài hàm - và đây là 1 canh bạc lớn. Với các hàm impure, không thể hoàn toàn hiểu được 1 hàm làm gì trừ khi bạn biết toàn bộ lịch sử của mỗi biến hàm sử dụng hoặc ảnh hưởng,
+Tất nhiên, nếu bạn thay đổi thứ tự của phép gộp, đầu ra cũng sẽ thay đổi. Thứ tự của việc thực hiện  sẽ ảnh hưởng. `f(g(x))` không luôn băng `g(f(x))`, nhưng những gì không ảnh hưởng nữa là những thứ xảy ra với các biến bên ngoài hàm - và đây là 1 canh bạc lớn. Với các hàm impure, không thể hoàn toàn hiểu được 1 hàm làm gì trừ khi bạn biết toàn bộ lịch sử của mỗi biến hàm sử dụng hoặc ảnh hưởng,
 
 Loại bỏ các lời gọi hàm ảnh hưởng bởi thời gian, và loại trừ toàn bộ các lớp của  các lỗi tiềm năng.
 
@@ -73,11 +73,11 @@ Loại bỏ các lời gọi hàm ảnh hưởng bởi thời gian, và loại t
 
 1 đối tượng **immutable** là 1 đối tượng mà không thể bị chỉnh sửa sau khi nó được tạo ra. Ngược lại 1 đối tượng  **mutable**  là bất kì đối tượng nào mà có thể chỉnh sửa sau khi được tạo ra.
 
-Sự bát biến là 1 khái niệm trọng tâm của lập trình hướng chức năng vì nếu không có điều này, data flow trong chương trình của bạn  sẽ bị mất mát. Lịch sử trạng thái là điều cấm kị, và các lỗi lạ lẫm có thể  xuất hiện trọng phần mềm của bạn. Để hiểu hơn về ý nghĩa của sự bất biến, xem   ["The Dao of Immutability."][5].
+Sự bát biến là 1 khái niệm trọng tâm của lập trình hướng chức năng vì nếu không có điều này, data flow trong chương trình của bạn  sẽ bị mất mát. Lịch sử trạng thái bị bỏ qua, và các lỗi lạ lẫm có thể  xuất hiện trọng phần mềm của bạn. Để hiểu hơn về ý nghĩa của sự bất biến, xem   ["The Dao of Immutability."][5].
 
 Trong Javascript, điều quan trọng là không được nhầm lẫn về `conse`, với sự bất biến. `const` tạo 1 liên kết tên biến mà không thể bị gán lại sau khi tạo. `const` không tạo ra các đối tượng bất biến. Bạn không thể thay đổi đối tượng được liên kết trỏ tới, nhưng bạn vẫn có thể thay đổi thuộc tính của đối tượng, có nghia là các liên kết được tạo với `const` có thể thay đổi, chứ không phải bất biến.
 
-Các đối tượng bất biến hoàn toàn không thể bị thay đổi. Bạn có thể tạo 1 giá trị hoàn toàn bất biến bằng cách deep freezing đối tượng. Javascript có 1 phương thức  có thể đóng băng đối tượng 1  mức:
+Các đối tượng bất biến hoàn toàn không thể bị thay đổi. Bạn có thể tạo 1 giá trị hoàn toàn bất biến bằng cách đóng băng đối tượng ở mức rất sâu. Javascript có 1 phương thức  có thể đóng băng đối tượng 1  mức:
 
 Nhưng việc đóng băng đối tượng  chỉ là sự bất biến thô sơ mà thôi. Ví dụ, đối tượng sau là không bất biến:
 
@@ -119,7 +119,7 @@ Những gì bạn cần biết ngay bây giờ là các tác vụ phụ cần ph
 ### Khả năng tái sử dụng thông qua các chức năng bậc cao
 
 
-Lập trình chức năng có xu hướng sử dụng lại một tập hợp các tiện ích chức năng phổ biến để xử lý dữ liệu. Lập trình hướng đối tượng có xu hướng sắp xếp phương thức và dữ liệu trong các đối tượng. Những phương pháp sắp xếp chỉ có thể hoạt động trên loại dữ liệu mà chúng được thiết kế để hoạt động và thường chỉ có dữ liệu chứa trong cá thể đối tượng cụ thể đó.
+Lập trình chức năng có xu hướng sử dụng lại một tập hợp các hàm tiện ích phổ biến để xử lý dữ liệu. Lập trình hướng đối tượng có xu hướng sắp xếp phương thức và dữ liệu trong các đối tượng. Những phương pháp sắp xếp chỉ có thể hoạt động trên loại dữ liệu mà chúng được thiết kế để hoạt động và thường chỉ có dữ liệu chứa trong cá thể đối tượng cụ thể đó.
 
 Trong lập trình chức năng, bất kỳ loại dữ liệu nào cũng được đối xử công bằng. Cùng một tiện ích map () có thể ánh xạ đối tượng, chuỗi, số hoặc bất kỳ kiểu dữ liệu nào khác vì nó lấy một hàm làm đối số xử lý thích hợp kiểu dữ liệu đã cho. FP rút ra thủ thuật tiện ích chung của nó bằng cách sử dụng các hàm bậc cao hơn.
 
@@ -165,9 +165,9 @@ Imperative data mapping
 
 Ánh xạ khai báo này thực hiện tương tự, nhưng tóm tắt điều khiển luồng bằng cách sử dụng tiện ích Array.prototype.map () chức năng, cho phép bạn thể hiện rõ ràng luồng dữ liệu:
 
-Mã bắt buộc thường xuyên sử dụng các câu lệnh. Một câu lệnh là một đoạn mã thực hiện một số hành động. Ví dụ về các câu lệnh thường được sử dụng là `for`, `if`, `switch`, `throw`, etc…
+Code **Imperative** thường xuyên sử dụng các câu lệnh. Một câu lệnh là một đoạn mã thực hiện một số hành động. Ví dụ về các câu lệnh thường được sử dụng là `for`, `if`, `switch`, `throw`, etc…
 
-Mã khai báo dựa nhiều hơn vào biểu thức. Biểu thức là một đoạn mã đánh giá một số giá trị. Biểu thức thường là một số kết hợp của các cuộc gọi hàm, giá trị và toán tử được đánh giá để tạo ra giá trị kết quả.
+Code **declarative** dựa nhiều hơn vào biểu thức. Biểu thức là một đoạn mã đánh giá một số giá trị. Biểu thức thường là một số kết hợp của các cuộc gọi hàm, giá trị và toán tử được đánh giá để tạo ra giá trị kết quả.
 
 Đây là tất cả các ví dụ về các biểu thức:
     
